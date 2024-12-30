@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   base: '/portfolio/',
+  define: {
+    'process.env': process.env,
+  },
   css: {
     preprocessorOptions: {
       scss: {
