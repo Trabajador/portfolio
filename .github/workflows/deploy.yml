@@ -11,9 +11,6 @@ permissions:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,6 +19,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+      - name: Setup .env file
+        run: echo "VITE_GITHUB_TOKEN=${{ secrets.VITE_GITHUB_TOKEN }}" > .env
       - name: Install dependencies
         run: npm install
       - name: Build
