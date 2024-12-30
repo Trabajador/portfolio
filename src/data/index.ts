@@ -22,7 +22,7 @@ import Vue from "../assets/svg/vue-9.svg";
 import ViteJS from "../assets/svg/vitejs.svg";
 import Js from "../assets/svg/js.svg";
 import Figma from "../assets/svg/figma.svg";
-import Wordpress from "../assets/svg/wordPress.svg";
+import Wordpress from "../assets/svg/wordpress.svg";
 import Shopify from "../assets/svg/shopify.svg";
 
 export const navItems = [
