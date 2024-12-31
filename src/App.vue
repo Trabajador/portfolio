@@ -14,8 +14,8 @@
 
   onMounted(() => {
     AOS.init({
-      duration: 1800,
-      offset: 100,
+      duration: 700,
+      offset: 50,
       disable: "mobile",
     });
   })

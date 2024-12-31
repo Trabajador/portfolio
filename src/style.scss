@@ -115,23 +115,23 @@
     position: relative;
     overflow: hidden;
 
-    &::before {
-      position: absolute;
-      pointer-events: none;
-      z-index: 1;
-      inset: -1em;
-      border: solid 2.25em;
-      border-image: conic-gradient(
-        from var(--a),
-        theme('colors.darkSectionColor'),
-        theme('colors.primaryColorLight'),
-        theme('colors.darkBodyColor'),
-        theme('colors.primaryColor')
-      ) 1;
-      filter: blur(.8em);
-      animation: a 4s linear infinite;
-      content: ''
-    }
+    // &::before {
+    //   position: absolute;
+    //   pointer-events: none;
+    //   z-index: 1;
+    //   inset: -1em;
+    //   border: solid 2.25em;
+    //   border-image: conic-gradient(
+    //     from var(--a),
+    //     theme('colors.darkSectionColor'),
+    //     theme('colors.primaryColorLight'),
+    //     theme('colors.darkBodyColor'),
+    //     theme('colors.primaryColor')
+    //   ) 1;
+    //   filter: blur(.8em);
+    //   animation: a 4s linear infinite;
+    //   content: ''
+    // }
 
     @keyframes a { to { --a: 1turn } }
   }
