@@ -31,8 +31,8 @@
             </h2>
             <ul class="font-medium">
               <li class="mb-4">
-                <a href="https://flowbite.com/" class="hover:underline">
-                  Flowbite
+                <a href="https://vuejs.org/" class="hover:underline">
+                  Vue
                 </a>
               </li>
               <li>
@@ -60,10 +60,10 @@
               </li>
               <li>
                 <a
-                  href="https://discord.com/users/nostrick"
+                  href="https://www.linkedin.com/in/mike-gurba-694006111/"
                   class="hover:underline"
                 >
-                  Discord
+                  Linkedin
                 </a>
               </li>
             </ul>
@@ -117,19 +117,24 @@
             <span class="sr-only">Facebook page</span>
           </a> -->
           <a
-            href="https://discord.com/users/nostrick"
+            href="https://www.linkedin.com/in/mike-gurba-694006111/"
             class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
           >
             <svg
               class="w-4 h-4"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              version="1.1"
               fill="currentColor"
-              viewBox="0 0 21 16"
-            >
-              <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+              stroke="currentColor">
+                <g transform="translate(-180.000000, -7479.000000)" fill="currentColor">
+                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z"></path> 
+                  </g>
+                </g>
             </svg>
-            <span class="sr-only">Discord</span>
+            <span class="sr-only">Linkedin</span>
           </a>
           <!-- <a
             href="#"
