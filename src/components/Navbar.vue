@@ -79,7 +79,7 @@ onUnmounted(() => {
   <div id="header-marker"></div>
 
   <header
-    :class="['w-screen sticky py-5 top-0 z-50 duration-300', { 'bg-sectionColor/70 shadow-lg backdrop-blur' : isScrolled }]"
+    :class="['w-screen sticky py-5 top-0 z-50 duration-300', { 'bg-sectionColor/70 shadow-lg' : isScrolled }]"
   >
     <div class="container">
       <div class="flex justify-between items-center">
