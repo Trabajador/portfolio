@@ -3,6 +3,30 @@
   import CV from "../assets/documents/Mike-Gurba-CV2025.pdf";
   import { ArrowDownTrayIcon } from "@heroicons/vue/24/outline"
   import GitHubLines from "../components/GitHubLines.vue";
+
+  const handleDownload = async (e) => {
+  e.preventDefault();
+
+  try {
+
+    const response = await fetch(CV);
+    const blob = await response.blob();
+
+    const blobUrl = window.URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = 'Mike-Gurba-CV2025.pdf'; // Set the filename
+
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(blobUrl);
+  } catch (error) {
+    console.error('Download failed:', error);
+  }
+};
 </script>
 
 <template>
@@ -29,7 +53,7 @@
             <p class="max-w-xl text-xl pb-5 hidden lg:flex">As a front-end developer, I create responsive, user-friendly websites and online stores using modern web technologies and CMS platforms. I transform designs into pixel-perfect interfaces and integrate custom solutions to deliver high-performance, scalable sites.</p>
 
             <div class="flex items-center flex-wrap gap-5">
-              <a :href="CV"  download target="_blank" class="btn__outline">
+              <a href="#" @click="handleDownload" class="btn__outline">
                   Download CV <ArrowDownTrayIcon class="size-5" />
               </a>
 
