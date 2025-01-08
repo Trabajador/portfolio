@@ -28,7 +28,7 @@
             <p class="max-w-xl text-xl pb-5 hidden lg:flex">As a front-end developer, I create responsive, user-friendly websites and online stores using modern web technologies and CMS platforms. I transform designs into pixel-perfect interfaces and integrate custom solutions to deliver high-performance, scalable sites.</p>
 
             <div class="flex items-center flex-wrap gap-5">
-              <a href="/src/assets/documents/Mike-Gurba-CV.pdf"  download="Mike-Gurba-CV.pdf" class="btn__outline">
+              <a href="/src/assets/documents/Mike-Gurba-CV2025.pdf"  download="Mike-Gurba-CV2025.pdf" class="btn__outline">
                   Download CV <ArrowDownTrayIcon class="size-5" />
               </a>
 
