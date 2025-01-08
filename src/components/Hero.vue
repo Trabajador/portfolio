@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import HeroImg from "../assets/img/hero.jpg";
+  import CV from "../assets/documents/Mike-Gurba-CV2025.pdf";
   import { ArrowDownTrayIcon } from "@heroicons/vue/24/outline"
   import GitHubLines from "../components/GitHubLines.vue";
 </script>
@@ -28,7 +29,7 @@
             <p class="max-w-xl text-xl pb-5 hidden lg:flex">As a front-end developer, I create responsive, user-friendly websites and online stores using modern web technologies and CMS platforms. I transform designs into pixel-perfect interfaces and integrate custom solutions to deliver high-performance, scalable sites.</p>
 
             <div class="flex items-center flex-wrap gap-5">
-              <a href="@/assets/documents/Mike-Gurba-CV2025.pdf"  download="Mike-Gurba-CV2025.pdf" class="btn__outline">
+              <a :href="CV"  :download="CV" class="btn__outline">
                   Download CV <ArrowDownTrayIcon class="size-5" />
               </a>
 
