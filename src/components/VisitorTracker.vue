@@ -1,6 +1,6 @@
 <script>
   import { ref, onMounted, onUnmounted } from 'vue';
-  import { ref as dbRef, set, onValue, increment, getDatabase } from 'firebase/database';
+  import { ref as dbRef, set, onValue, increment, getDatabase, remove } from 'firebase/database';
   import { initializeApp } from 'firebase/app';
 
   const firebaseConfig = {
@@ -59,11 +59,17 @@
         onValue(todayRef, (snapshot) => {
           todayVisitors.value = snapshot.val() || 0;
         });
-      });
 
-      onUnmounted(() => {
-        // Remove online status when user leaves
-        set(dbRef(database, `online/${visitorId}`), null);
+        // Set a timeout to remove the online visitor after a certain period (e.g., 5 minutes)
+        const timeout = setTimeout(() => {
+          remove(dbRef(database, `online/${visitorId}`));  // Remove the online visitor after 5 minutes
+        }, 5 * 60 * 1000); // 5 minutes
+
+        // Cleanup timeout when the component is destroyed
+        onUnmounted(() => {
+          clearTimeout(timeout);  // Clear timeout when component is destroyed
+          remove(dbRef(database, `online/${visitorId}`));  // Ensure online visitor is removed
+        });
       });
 
       return {
@@ -72,7 +78,7 @@
         todayVisitors
       };
     }
-  }
+  };
 </script>
 
 <template>
