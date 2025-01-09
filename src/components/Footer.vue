@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import DarkLogo from "../assets/svg/iconM.svg";
   import WhiteLogo from "../assets/svg/iconM-white.svg";
-  import VisitorTracker from '../components/VisitorTracker.vue'
 </script>
 
 <template>
@@ -194,7 +193,6 @@
             </svg>
             <span class="sr-only">Mike Gurba CV</span>
           </a>
-          <VisitorTracker />
         </div>
       </div>
     </div>
