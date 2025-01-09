@@ -38,13 +38,21 @@
       }
 
       onMounted(async () => {
-        // Update total visitors
-        set(visitorRef, increment(1));
+        // Update total visitors - Increment only once and don't increment on reload
+        const totalVisitorsSnapshot = await dbRef(database, 'visitors').get();
+        if (!totalVisitorsSnapshot.exists()) {
+          set(visitorRef, 0);  // Initialize if not set
+        }
+        set(visitorRef, increment(1));  // Increment only once when the visitor is first seen
 
         // Track online status
         set(dbRef(database, `online/${visitorId}`), true);
 
-        // Update today's visitors
+        // Update today's visitors - Increment only once per day
+        const todaySnapshot = await dbRef(database, `daily/${getTodayDate()}`).get();
+        if (!todaySnapshot.exists()) {
+          set(todayRef, 0);  // Initialize if not set
+        }
         set(todayRef, increment(1));
 
         // Listen for changes
@@ -59,17 +67,11 @@
         onValue(todayRef, (snapshot) => {
           todayVisitors.value = snapshot.val() || 0;
         });
+      });
 
-        // Set a timeout to remove the online visitor after a certain period (e.g., 5 minutes)
-        const timeout = setTimeout(() => {
-          remove(dbRef(database, `online/${visitorId}`));  // Remove the online visitor after 5 minutes
-        }, 5 * 60 * 1000); // 5 minutes
-
-        // Cleanup timeout when the component is destroyed
-        onUnmounted(() => {
-          clearTimeout(timeout);  // Clear timeout when component is destroyed
-          remove(dbRef(database, `online/${visitorId}`));  // Ensure online visitor is removed
-        });
+      onUnmounted(() => {
+        // Ensure cleanup of online status when user leaves
+        remove(dbRef(database, `online/${visitorId}`));
       });
 
       return {
@@ -78,7 +80,7 @@
         todayVisitors
       };
     }
-  };
+  }
 </script>
 
 <template>
