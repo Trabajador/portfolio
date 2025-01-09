@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import DarkLogo from "../assets/svg/iconM.svg";
   import WhiteLogo from "../assets/svg/iconM-white.svg";
+  import VisitorTracker from '../components/VisitorTracker.vue'
 </script>
 
 <template>
@@ -96,7 +97,7 @@
           </a>
           . All Rights Reserved.
         </span>
-        <div class="flex mt-4 sm:justify-center sm:mt-0">
+        <div class="flex mt-4 sm:justify-center sm:mt-0 items-center gap-4">
           <!-- <a
             href="#"
             class=""
@@ -193,6 +194,7 @@
             </svg>
             <span class="sr-only">Mike Gurba CV</span>
           </a>
+          <VisitorTracker />
         </div>
       </div>
     </div>
