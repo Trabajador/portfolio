@@ -1,6 +1,6 @@
 <script>
   import { ref, onMounted, onUnmounted } from 'vue';
-  import { ref as dbRef, set, onValue, increment, getDatabase, remove } from 'firebase/database';
+  import { ref as dbRef, set, onValue, increment, get, remove, getDatabase } from 'firebase/database';
   import { initializeApp } from 'firebase/app';
 
   const firebaseConfig = {
@@ -20,10 +20,7 @@
     name: 'VisitorTracker',
     setup() {
       const totalVisitors = ref(0);
-      const onlineVisitors = ref(0);
-      const todayVisitors = ref(0);
       const visitorRef = dbRef(database, 'visitors');
-      const onlineRef = dbRef(database, 'online');
       const todayRef = dbRef(database, `daily/${getTodayDate()}`);
 
       // Generate unique visitor ID
@@ -39,17 +36,17 @@
 
       onMounted(async () => {
         // Update total visitors - Increment only once and don't increment on reload
-        const totalVisitorsSnapshot = await dbRef(database, 'visitors').get();
+        const totalVisitorsSnapshot = await get(visitorRef);
         if (!totalVisitorsSnapshot.exists()) {
           set(visitorRef, 0);  // Initialize if not set
         }
         set(visitorRef, increment(1));  // Increment only once when the visitor is first seen
 
-        // Track online status
+        // Track online status - Use visitorId to track individual visitors
         set(dbRef(database, `online/${visitorId}`), true);
 
         // Update today's visitors - Increment only once per day
-        const todaySnapshot = await dbRef(database, `daily/${getTodayDate()}`).get();
+        const todaySnapshot = await get(todayRef);
         if (!todaySnapshot.exists()) {
           set(todayRef, 0);  // Initialize if not set
         }
@@ -59,14 +56,6 @@
         onValue(visitorRef, (snapshot) => {
           totalVisitors.value = snapshot.val() || 0;
         });
-
-        onValue(onlineRef, (snapshot) => {
-          onlineVisitors.value = snapshot.val() ? Object.keys(snapshot.val()).length : 0;
-        });
-
-        onValue(todayRef, (snapshot) => {
-          todayVisitors.value = snapshot.val() || 0;
-        });
       });
 
       onUnmounted(() => {
@@ -75,9 +64,7 @@
       });
 
       return {
-        totalVisitors,
-        onlineVisitors,
-        todayVisitors
+        totalVisitors
       };
     }
   }
@@ -88,14 +75,6 @@
     <div class="stat-box flex gap-1">
       <span>Total Visitors</span>
       <div class="count">{{ totalVisitors }}</div>
-    </div>
-    <div class="stat-box flex gap-1">
-      <span>Online Now</span>
-      <div class="count">{{ onlineVisitors }}</div>
-    </div>
-    <div class="stat-box flex gap-1">
-      <span>Today's Visits</span>
-      <div class="count">{{ todayVisitors }}</div>
     </div>
   </div>
 </template>
