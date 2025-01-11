@@ -18,7 +18,7 @@ export default {
     if (!this.token) {
       console.error('GitHub token is not defined. Please check your .env file.');
     } else {
-      console.log('GitHub token loaded successfully.');
+      console.log('GitHub token loaded successfully!');
       // Automatically fetch repositories and line counts when the page loads
       this.fetchRepositories();
     }
