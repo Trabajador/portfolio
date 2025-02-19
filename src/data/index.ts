@@ -1,6 +1,7 @@
 import { HomeIcon, AcademicCapIcon, Cog6ToothIcon, DocumentDuplicateIcon, UserIcon } from "@heroicons/vue/24/outline";
 import { GlobeAltIcon, PaperAirplaneIcon, PencilSquareIcon, ShoppingBagIcon, CodeBracketIcon, CursorArrowRippleIcon } from "@heroicons/vue/24/solid";
 import MabblyImg from "../assets/svg/mabbly.svg";
+import IkoImg from "../assets/svg/iko.svg";
 import GriffithImg from "../assets/svg/griffith.svg";
 import HiTideImg from "../assets/svg/hitide.svg";
 import TolmarImg from "../assets/svg/tolmar.svg";
@@ -63,6 +64,11 @@ export const projectsItems = [
     title: "Griffith Foods",
     url: 'https://griffithfoods.com/',
     image: GriffithImg,
+  },
+  {
+    title: "Iko Global",
+    url: 'https://www.iko.com/na/',
+    image: IkoImg,
   },
   {
     title: "Tolmar",
