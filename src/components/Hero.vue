@@ -155,7 +155,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 place-items-center gap-10 py-10 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- <div class="grid grid-cols-1 place-items-center gap-10 py-10 sm:grid-cols-2 lg:grid-cols-4">
         <div class="flex items-center gap-3">
           <p class="text-5xl font-bold lg:text-6xl">7</p>
           <p>
@@ -183,7 +183,7 @@
             Lines of <br> Code
           </p>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
