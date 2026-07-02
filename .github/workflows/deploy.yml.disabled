@@ -1,0 +1,7 @@
+# Deploy disabled — production portfolio is static HTML in Trabajador/Trabajador.github.io/portfolio/
+# Rename to deploy.yml only if you intentionally want to restore Vue deploy (not recommended).
+#
+# name: Deploy to GitHub Pages
+# on:
+#   push:
+#     branches: ['main']

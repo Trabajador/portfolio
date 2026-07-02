@@ -1,5 +1,23 @@
-# Vue 3 + Vite
+# Portfolio (Vue) — archived dev project
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This Vue/Vite app is **no longer deployed** to GitHub Pages.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Production portfolio lives in the main CV repo:
+
+- **Site:** https://trabajador.github.io/portfolio/
+- **Source:** [Trabajador/Trabajador.github.io/portfolio](https://github.com/Trabajador/Trabajador.github.io/tree/master/portfolio)
+
+## Local development only
+
+```bash
+npm install
+npm run dev
+```
+
+Opens at http://localhost:5173/portfolio/ — this is the legacy Vue layout, not the live static portfolio.
+
+## Why deploy was removed
+
+Both this repo and `Trabajador.github.io` published to `trabajador.github.io/portfolio/`. The Vue build overwrote the static CV-matching portfolio. Deploy is disabled so the main CV repo owns that URL.
+
+**One-time GitHub setting:** In [Trabajador/portfolio](https://github.com/Trabajador/portfolio) → Settings → Pages → set Source to **None** (if the old Vue site still appears after pushing the CV repo).
